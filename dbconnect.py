@@ -38,3 +38,7 @@ def get_db():
         yield db  # Use the connection
     finally:
         db.close()  # Always close connection when done
+
+def create_tables():
+    Base.metadata.create_all(bind=engine)
+    print("✅ Tables created successfully")
